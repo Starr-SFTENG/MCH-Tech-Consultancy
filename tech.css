@@ -397,22 +397,25 @@ body {
     font-family: Arial, sans-serif;
 }
 
+
 footer {
     background-color: #eaeaea;
     padding: 40px 20px;
     color: #333;
+    font-family: 'Arial', sans-serif;
 }
 
 .footer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: left;
 }
 
 .footer-section {
     max-width: 200px;
     margin-bottom: 20px;
+    flex: 1 1 200px; /* Allow the sections to be flexible */
 }
 
 .footer-section h2, .footer-section h3 {
@@ -434,13 +437,15 @@ footer {
     display: flex;
     align-items: center;
     margin-top: 10px;
+    width: 100%; /* Ensure the form uses available space */
 }
 
 .footer-section form input[type="email"] {
     padding: 8px;
     border: 1px solid #f6f6f6;
     border-radius: 4px;
-    width: 120px;
+    width: 100%; /* Make the input field full width */
+    max-width: 200px; /* Prevent it from becoming too wide */
 }
 
 .footer-section form button {
@@ -455,6 +460,7 @@ footer {
 
 .footer-section ul {
     list-style: none;
+    padding-left: 0;
 }
 
 .footer-section ul li {
@@ -489,6 +495,106 @@ footer {
 .footer-section p a:hover {
     text-decoration: underline;
 }
+
+.payments {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.payment-icons {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.payment-icons i {
+    margin-right: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .footer-container {
+        justify-content: space-around;
+    }
+
+    .footer-section {
+        max-width: 250px; /* Adjust max width for medium screens */
+    }
+
+    .footer-section form input[type="email"] {
+        width: 180px; /* Adjust input field width */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        max-width: 100%; /* Ensure full width for small screens */
+        text-align: center;
+    }
+
+    .footer-section form input[type="email"] {
+        width: 80%; /* Make the form input wider */
+        max-width: none;
+    }
+
+    .footer-section form button {
+        width: 80%; /* Make the button the same width as the input */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section h2, .footer-section h3 {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+
+    .footer-section p {
+        font-size: 12px; /* Smaller text for readability */
+    }
+
+    .footer-section form input[type="email"] {
+        padding: 6px;
+    }
+
+    .footer-section form button {
+        padding: 6px 10px;
+    }
+
+    .social-icons a {
+        font-size: 18px; /* Smaller social icons */
+    }
+
+    .payment-icons {
+        font-size: 25px; /* Smaller payment icons */
+    }
+}
+
+@media (max-width: 372px) {
+    .footer-section h2, .footer-section h3 {
+        font-size: 16px; /* Further reduce font size */
+    }
+
+    .footer-section p {
+        font-size: 12px; /* Adjust paragraph font size */
+    }
+
+    .footer-section form input[type="email"] {
+        width: 100%; /* Make the input field take up the full width */
+        margin-bottom: 10px; /* Add space between input and button */
+    }
+
+    .footer-section form button {
+        width: 100%; /* Button takes full width */
+    }
+
+    .payment-icons {
+        font-size: 20px; /* Further reduce payment icons size */
+    }
+}
+
   
   .shipping-icons,
   .payment-icons {
